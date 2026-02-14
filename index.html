@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Us 💘</title>
+<title>For Us 🖤</title>
 
 <style>
 body{
@@ -19,7 +19,7 @@ text-align:center;
 overflow:hidden;
 }
 
-.container{
+.screen{
 display:none;
 flex-direction:column;
 align-items:center;
@@ -49,12 +49,6 @@ button:hover{
 transform:scale(1.1);
 }
 
-#passwordScreen{
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
 input{
 padding:10px;
 border-radius:8px;
@@ -66,14 +60,15 @@ text-align:center;
 <body>
 
 <!-- ŞİFRE EKRANI -->
-<div id="passwordScreen">
+<div id="passwordScreen" class="screen" style="display:flex;">
 <h2>Şifreyi Gir 💌</h2>
 <input type="password" id="passwordInput" placeholder="Şifre">
 <button onclick="checkPassword()">Giriş</button>
 </div>
 
-<!-- ANA EKRAN -->
-<div class="container" id="mainContent">
+<!-- ANA İÇERİK -->
+<div id="mainContent" class="screen">
+
 <h1>bugün 14 subat olması biseyi degistirmiyor ama</h1>
 
 <p style="color:#ff69b4;font-size:18px;">
@@ -90,11 +85,14 @@ normal boy gothiiiiicalt girl 🖤
 <button class="yes" onclick="sayYes()">Evet</button>
 <button class="no" onclick="moveNo(this)">Hayır</button>
 </div>
+
 </div>
 
 <script>
+
+// ŞİFRE KONTROL (ESKİ SİSTEM BOZULMADI)
 function checkPassword(){
-const correctPassword="1234";  // BURAYI DEGISTIREBILIRSIN
+const correctPassword="1234"; // kendi şifreni yazabilirsin
 const entered=document.getElementById("passwordInput").value;
 
 if(entered===correctPassword){
@@ -105,17 +103,24 @@ alert("Yanlış şifre 😈");
 }
 }
 
+// EVET BUTONU
 function sayYes(){
-document.getElementById("mainContent").innerHTML=
-"<h1>forrr ussssss? 💍</h1><h2>seni cidden seviyorum 🖤</h2>";
+document.getElementById("mainContent").innerHTML=`
+<h1>forrr ussssss? 💍</h1>
+<h2>seni cidden seviyorum 🖤</h2>
+<p>gerçekten her şeyim olmanı istiyorum...</p>
+`;
 }
 
+// HAYIR KAÇMA EFEKTİ (var olan sistemi bozmaz)
 function moveNo(button){
 button.style.position="absolute";
 button.style.top=Math.random()*80+"%";
 button.style.left=Math.random()*80+"%";
 }
+
 </script>
 
 </body>
 </html>
+
