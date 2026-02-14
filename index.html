@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Us 💘</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:black;
+color:white;
+font-family:Arial, sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+.container{
+display:none;
+flex-direction:column;
+align-items:center;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.yes{
+background:#ff2e63;
+color:white;
+}
+
+.no{
+background:gray;
+color:white;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+#passwordScreen{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:none;
+text-align:center;
+}
+</style>
+</head>
+<body>
+
+<!-- ŞİFRE EKRANI -->
+<div id="passwordScreen">
+<h2>Şifreyi Gir 💌</h2>
+<input type="password" id="passwordInput" placeholder="Şifre">
+<button onclick="checkPassword()">Giriş</button>
+</div>
+
+<!-- ANA EKRAN -->
+<div class="container" id="mainContent">
+<h1>bugün 14 subat olması biseyi degistirmiyor ama</h1>
+
+<p style="color:#ff69b4;font-size:18px;">
+meeee (nerd, normalbooooy) ve my altttgothiiiiiiccccc (thebestttt)
+</p>
+
+<p style="color:#ff69b4;">
+normal boy gothiiiiicalt girl 🖤
+</p>
+
+<h2>Benimle olur musun?</h2>
+
+<div>
+<button class="yes" onclick="sayYes()">Evet</button>
+<button class="no" onclick="moveNo(this)">Hayır</button>
+</div>
+</div>
+
+<script>
+function checkPassword(){
+const correctPassword="1234";  // BURAYI DEGISTIREBILIRSIN
+const entered=document.getElementById("passwordInput").value;
+
+if(entered===correctPassword){
+document.getElementById("passwordScreen").style.display="none";
+document.getElementById("mainContent").style.display="flex";
+}else{
+alert("Yanlış şifre 😈");
+}
+}
+
+function sayYes(){
+document.getElementById("mainContent").innerHTML=
+"<h1>forrr ussssss? 💍</h1><h2>seni cidden seviyorum 🖤</h2>";
+}
+
+function moveNo(button){
+button.style.position="absolute";
+button.style.top=Math.random()*80+"%";
+button.style.left=Math.random()*80+"%";
+}
+</script>
+
+</body>
+</html>
